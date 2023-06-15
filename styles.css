@@ -1,0 +1,41 @@
+:root {
+  --red: #951217;
+  --grey: #45494d;
+  --light-grey: #949899;
+  --black: #0f0f0f;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+  color: var(--black);
+  display: grid;
+  grid-template-columns: 1fr 5fr 30px;
+  grid-template-rows: 150px 1fr 50px;
+}
+
+header {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: var(--light-grey);
+  background-color: var(--black);
+}
+
+#sidebar {
+  grid-row: 1/4;
+  background-color: green;
+}
+
+main {
+  background-color: red;
+}
+
+#right-side {
+  background-color: rebeccapurple;
+  grid-column: 3/4;
+  grid-row: 1/-1;
+}
+
+footer {
+  background-color: aqua;
+}
