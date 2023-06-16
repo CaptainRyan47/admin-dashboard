@@ -12,7 +12,7 @@ body {
   font-family: 'ZCOOL QingKe HuangYou', sans-serif;
   color: var(--black);
   display: grid;
-  grid-template-columns: 1fr 5fr 10px;
+  grid-template-columns: minmax(180px, 1fr) 7fr 10px;
   grid-template-rows: 150px 1fr 50px;
 }
 
@@ -77,15 +77,20 @@ header {
   z-index: 1;
   color: var(--light-grey);
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(9, 60px) 1fr 60px;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(9, minmax(20px, 60px)) minmax(0, 1fr) minmax(20px, 60px);
   align-items: center;
 }
 
 #sidebar>h2 {
   font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 1.5vw, 4rem);
   text-align: center;
+
+}
+
+.sidebar-link:hover {
+  background-color: var(--bright-red);
 }
 
 .sidebar-link img {
@@ -94,13 +99,21 @@ header {
   margin-left: 1rem;
 }
 
+.sidebar-link:hover img {
+  filter: invert(1%) sepia(6%) saturate(10%) hue-rotate(314deg) brightness(93%) contrast(90%);
+}
+
 .sidebar-link a {
   text-decoration: none;
   color: var(--light-grey);
   display: flex;
   gap: 1rem;
   align-items: center;
-  font-size: 2rem;
+  font-size: clamp(1rem, 1.1vw, 3rem);
+}
+
+.sidebar-link:hover a{
+  color: var(--black);
 }
 
 #right-side {
