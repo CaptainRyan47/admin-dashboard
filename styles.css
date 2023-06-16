@@ -1,6 +1,6 @@
 :root {
   --red: #951217;
-  --bright-red: #ff252c;
+  --bright-red: #ff3037;
   --grey: #45494d;
   --light-grey: #949899;
   --black: #0f0f0f;
@@ -12,7 +12,7 @@ body {
   font-family: 'ZCOOL QingKe HuangYou', sans-serif;
   color: var(--black);
   display: grid;
-  grid-template-columns: 1fr 5fr 30px;
+  grid-template-columns: 1fr 5fr 10px;
   grid-template-rows: 150px 1fr 50px;
 }
 
@@ -25,6 +25,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0px 0px 10px var(--grey);
+  z-index: 1;
 }
 
 #search {
@@ -49,7 +51,7 @@ header {
 }
 
 #search:focus-within {
-  filter: drop-shadow(0px 0px 10px red);
+  filter: drop-shadow(0px 0px 10px var(--bright-red));
 }
 
 #search-left {
@@ -70,19 +72,25 @@ header {
 
 #sidebar {
   grid-row: 1/4;
-  background-color: green;
+  background-color: var(--black);
+  box-shadow: 0px 0px 10px black;
+  z-index: 1;
+  color: var(--light-grey);
 }
 
 main {
-  background-color: red;
+  background-color: var(--light-grey);
 }
 
 #right-side {
-  background-color: rebeccapurple;
+  background-color: var(--bright-red);
   grid-column: 3/4;
   grid-row: 1/-1;
+  box-shadow: 0px 0px 10px 10px var(--bright-red);
+  z-index: 999;
 }
 
 footer {
-  background-color: aqua;
+  background-color: var(--grey);
+  box-shadow: 0px 0px 10px var(--grey);
 }
