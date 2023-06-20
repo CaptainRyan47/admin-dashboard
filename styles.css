@@ -86,20 +86,23 @@ header {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: clamp(1.8rem, 1.5vw, 4rem);
   text-align: center;
+  padding-top: .25em;
 
 }
 
-.sidebar-link:hover {
+.sidebar-link:hover,
+.sidebar-link:focus-within {
   background-color: var(--bright-red);
 }
 
 .sidebar-link img {
   filter: invert(64%) sepia(5%) saturate(159%) hue-rotate(145deg) brightness(92%) contrast(91%);
-  height: 3rem;
+  max-height: clamp(1rem, 10vh, 3rem);
   margin-left: 1rem;
 }
 
-.sidebar-link:hover img {
+.sidebar-link:hover img,
+.sidebar-link:focus-within img {
   filter: invert(1%) sepia(6%) saturate(10%) hue-rotate(314deg) brightness(93%) contrast(90%);
 }
 
@@ -112,8 +115,55 @@ header {
   font-size: clamp(1rem, 1.1vw, 3rem);
 }
 
-.sidebar-link:hover a{
+.sidebar-link:hover a,
+.sidebar-link:focus-within a {
   color: var(--black);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 1em;
+}
+
+#projects {
+  grid-row: span 2;
+}
+
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+#projects>h2 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.card {
+  color: white;
+  width: 30ch;
+  max-height: 40ch;
+  background-color: var(--red);
+  padding: 1em;
+  box-shadow: 3px 0px 10px var(--black);
+  scale: 1.0;
+  transition: scale 0.1s;
+  border-radius: 5px;
+}
+
+.card:hover {
+  scale: 1.05;
+  z-index: 1;
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 #right-side {
