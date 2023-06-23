@@ -37,6 +37,7 @@ h2 {
 h3 {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 1.4em;
+  margin: 0;
 }
 
 hr {
@@ -174,6 +175,20 @@ main {
   font-size: 2rem;
   margin: 0;
   font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.card-buttons {
+  display: flex;
+  height: 2em;
+  width: 100%;
+}
+
+.card-buttons>img {
+  min-width: 0;
+}
+
+.card-buttons>img:first-child {
+  margin-left: auto;
 }
 
 #announcements {
